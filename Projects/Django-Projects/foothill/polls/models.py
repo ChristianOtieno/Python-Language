@@ -18,4 +18,4 @@ class Choice(models.Model):
     voices = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.choice_text
+        return self.choice_text 
