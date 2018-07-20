@@ -6,6 +6,4 @@ for char in phrase:
     print ('X',)
   else:
     print (char,)
-
-#delete this print statement!
-print
+print()
