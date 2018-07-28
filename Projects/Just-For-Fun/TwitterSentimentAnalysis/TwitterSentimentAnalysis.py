@@ -19,7 +19,7 @@ class TwitterClient(object):
 
         # attempt authentication
         try:
-            #create OAuthHanandler object
+            # Create OAuthHanandler object
             self.auth = OAuthHandler(ConsumerKey, ConsumerSecret)
             # set access token and secret
             self.auth.set_access_token(AccessToken, AccessTokenSecret)
