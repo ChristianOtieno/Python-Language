@@ -5,5 +5,5 @@ def digit_sum(x):
     while x > 0:
         total += x % 10
         x = x // 10
-        print x
+        print (x)
     return total
