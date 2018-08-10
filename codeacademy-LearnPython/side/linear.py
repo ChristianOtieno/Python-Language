@@ -12,9 +12,11 @@ book = [
     "Nathaniel",
     "Suleiman",
     "Kennedy",
-    "Micheal" 
-]
+    "Michael"]
 #Prompts user for name
 name = str(input("Name: "))
 if name in book:
-       print(f"Calling {Name}")
+    if name[0].isupper() or name[0].islower():
+        print(f"Calling... {name}")
+else:
+    print(f"Quitting... {name}")
