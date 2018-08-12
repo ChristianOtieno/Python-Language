@@ -2,9 +2,9 @@ import os
 import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
-from flaskblog import app, db, bcrypt
-from flaskblog.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
-from flaskblog.models import User, Post
+from blog import app, db, bcrypt
+from blog.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
+from blog.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
 
@@ -102,7 +102,7 @@ def NewPost():
         db.session.commit()
         flash('Your post has been created!', 'success')
         return redirect(url_for('home'))
-    return render_template('create_post.html', title='New Post',
+    return render_template('CreatePost.html', title='New Post',
                            form=form, legend='New Post')
 
 
@@ -128,7 +128,7 @@ def UpdatePost(post_id):
     elif request.method == 'GET':
         form.title.data = post.title
         form.content.data = post.content
-    return render_template('create_post.html', title='Update Post',
+    return render_template('CreatePost.html', title='Update Post',
                            form=form, legend='Update Post')
 
 
