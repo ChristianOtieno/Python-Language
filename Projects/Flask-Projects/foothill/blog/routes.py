@@ -3,7 +3,7 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request
 from blog import app, db, bcrypt
-from blog.forms import RegistrationForm, LoginForm, UpdateAccountForm
+from blog.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
 from blog.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -40,8 +40,8 @@ def register():
         return redirect(url_for('home'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        hashedPassword = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        user = User(username=form.username.data, email=form.email.data, password=hashedPassword)
+        HashedPassword = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        user = User(username=form.username.data, email=form.email.data, password=HashedPassword)
         db.session.add(user)
         db.session.commit() 
         flash(f'Your account has been created, you are now able to log in!', 'success')
@@ -70,16 +70,16 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
-def savePicture(form_picture):
-    randomHex = secrets.token_hex(8)
+def SavePicture(form_picture):
+    RandomHex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(form_picture.filename)
-    picture_fn = randomHex + f_ext
-    picturePath = os.path.join(app.root_path, 'static/profilePics/', picture_fn)
+    picture_fn = RandomHex + f_ext
+    PicturePath = os.path.join(app.root_path, 'static/ProfilePics/', picture_fn)
     
-    outputSize = (125,125)
+    OutputSize = (125,125)
     i = Image.open(form_picture)
-    i.thumbnail(outputSize)
-    i.save(picturePath)
+    i.thumbnail(OutputSize)
+    i.save(PicturePath)
 
     return picture_fn
 
@@ -89,8 +89,8 @@ def account():
     form = UpdateAccountForm()
     if form.validate_on_submit():
         if form.picture.data:
-            pictureFile = savePicture(form.picture.data)
-            current_user.imageFile = pictureFile
+            PictureFile = SavePicture(form.picture.data)
+            current_user.ImageFile = PictureFile
         current_user.username = form.username.data
         current_user.email = form.email.data
         db.session.commit()
@@ -100,8 +100,20 @@ def account():
         form.username.data = current_user.username
         form.email.data = current_user.email
 
-    imageFile = url_for('static', 
-                        filename='profilePics/' + current_user.imageFile)
+    ImageFile = url_for('static', 
+                        filename='ProfilePics/' + current_user.ImageFile)
     return render_template('account.html', 
-                        title='Account', imageFile=imageFile, form=form)
-    
+                        title='Account', ImageFile=ImageFile, form=form)
+
+
+
+@app.route("/post/new", methods=['GET','POST'])
+@login_required
+def NewPost():
+    form = PostForm()
+    if form.validate_on_submit():
+        flash('Your post has been created!', 'success')
+        return redirect(url_for('home'))
+    return render_template('CreatePost.html',title='New Post')
+
+
