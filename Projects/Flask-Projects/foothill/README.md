@@ -44,5 +44,12 @@
 
 >In this Python Flask Tutorial, I was learning how to restructure my application to use blueprints. Blueprints allow for the splitting up of the application into more manageable sections. I also moved my configuration into its own file and created a configuration class. Lastly, I moved the creation of my application into its own function. This is called an Application Factory, and it allows to easily create multiple instances of the app with different configurations.
 
+## Web App Part 12 - Custom Error Pages
+
+> In this Python Flask Tutorial, I was be learning how to create custom error pages. I created this with new error blueprints from scratch so that it would be easy to add different sections to our application whilst using blueprints so as to have custom error pages for my 403, 404, and 500 errors.
+
+My progress can be found in the #100DaysOfCode challenge on twitter via my page https://twitter.com/cgaochristian
+
+- CREDITS
 
 https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g
