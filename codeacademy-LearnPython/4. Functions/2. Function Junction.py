@@ -1,6 +1,6 @@
 
 def spam():
   """Prints 'Eggs!'"""
-  print "Eggs!"
+  print ("Eggs!")
 
 spam()
