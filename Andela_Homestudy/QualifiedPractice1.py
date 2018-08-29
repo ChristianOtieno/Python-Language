@@ -3,10 +3,10 @@
 # based on the input
 
 def say_hello(name):
-    name = input("What is your name? ")
     if name == input(name):
-        print("Hello, %s" % name)
+        print("Hello, {}".format(name))
     else:
-        return("Hello there!")
-
-say_hello()
+        print("Hello there!")
+        
+name = input("What is your name? ")
+say_hello(name) 
