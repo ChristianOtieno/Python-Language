@@ -7,7 +7,7 @@ for x in range(0, 5):
 
 def print_board(board):
   for row in board:
-    print " ".join(row)
+    print (" ".join(row))
 
 def random_row(board):
   return randint(0, len(board) - 1)
@@ -22,5 +22,5 @@ print (ship_row)
 print (ship_col)
 
 
-guess_row = int(raw_input("Guess Row: "))
-guess_col = int(raw_input("Guess Col: "))
+guess_row = int(input("Guess Row: "))
+guess_col = int(input("Guess Col: "))
