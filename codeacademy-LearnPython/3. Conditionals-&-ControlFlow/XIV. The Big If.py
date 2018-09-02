@@ -12,10 +12,10 @@ def grade_converter(grade):
         return "F"
       
 # This should print an "A"      
-print grade_converter(92)
+print (grade_converter(92))
 
 # This should print a "C"
-print grade_converter(70)
+print (grade_converter(70))
 
 # This should print an "F"
-print grade_converter(61)
+print (grade_converter(61))
