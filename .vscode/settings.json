@@ -12,7 +12,8 @@
     "python.unitTest.unittestEnabled": false,
     "python.unitTest.promptToConfigure": false,
     "cSpell.words": [
-        "Andela"
+        "Andela",
+        "TECHCAMP"
     ],
     "python.linting.pep8Enabled": true,
     "python.linting.enabled": true,
