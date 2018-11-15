@@ -2,7 +2,7 @@
 
 1. Create a program that calculates and prints the net salary of an individual.
 2. The program should take the "basicSalary", "overtime", "houseAllowance", "otherBenefits" and.
-3. Use to calculate the net salary.
+3. Use it to calculate the net salary.
 4. Use the Payee Table to find Payee, NHIF Table to find nhifContribution and nssfContribution
 
 *HINT:*

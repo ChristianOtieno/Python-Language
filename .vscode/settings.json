@@ -3,19 +3,19 @@
     "python.unitTest.unittestArgs": [
         "-v",
         "-s",
-        "./Andela_Homestudy",
+        "./techcamp",
         "-p",
         "*test.py"
     ],
     "python.unitTest.pyTestEnabled": false,
     "python.unitTest.nosetestsEnabled": false,
     "python.unitTest.unittestEnabled": false,
-    "python.unitTest.promptToConfigure": false,
     "cSpell.words": [
         "Andela",
         "TECHCAMP"
     ],
     "python.linting.pep8Enabled": true,
     "python.linting.enabled": true,
-    "python.linting.pylintEnabled": false
+    "python.linting.pylintEnabled": false,
+    "python.unitTest.promptToConfigure": false
 }
